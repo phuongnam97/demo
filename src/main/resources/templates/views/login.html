@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<th:block th:include="views/fragment"></th:block>
+<form name="form" method="POST" action="/login">
+    <div th:if="${#request.getParameter('error') == 'true'}" style="color: red">Failed</div>
+    Username:
+    <input type="text" name="username">
+    <br>
+    Password:
+    <input type="password" name="password">
+    <br>
+    <button type="submit">Login</button>
+    &nbsp;
+    <a href="/register">Register</a>
+</form>
+</body>

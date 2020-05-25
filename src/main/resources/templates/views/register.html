@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<form method="post" action="/register" th:object="${obj}">
+    Username:
+    <input type="text" name="username" th:field="*{username}">
+    <br>
+    Password:
+    <input type="password" name="password">
+    <br>
+    Confirm Password:
+    <input type="password" name="password-confirm">
+    <br>
+    Full name:
+    <input type="text" name="fullname" th:field="*{fullname}">
+    <br>
+    Role:
+    <th:block th:each="role:${listRole}">
+        <input type="checkbox" th:name="${'role-' + role.id}" th:text="${role.name}">
+    </th:block>
+
+    <input type="hidden" value="1" th:field="*{status}">
+    <br>
+    <button type="submit">Register</button>
+</form>
+</body>

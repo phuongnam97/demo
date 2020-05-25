@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Info</title>
+</head>
+<body>
+<th:block th:include="views/fragment"></th:block>
+<div>
+    <ul>
+        <li th:text="${'Username: ' + user.username}"></li>
+        <li th:text="${'Fullname: ' + user.fullname}"></li>
+        <li th:text="${listUserRoleStr}"></li>
+    </ul>
+</div>
+</body>

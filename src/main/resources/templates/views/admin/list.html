@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+</head>
+<body>
+<th:block th:include="views/fragment"></th:block>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Fullname</th>
+        <th>Status</th>
+    </tr>
+    <th:block th:each="user:${listObj}">
+        <tr>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.fullname}"></td>
+            <td th:text="${user.status}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
